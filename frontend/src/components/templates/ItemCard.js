@@ -21,7 +21,7 @@ const ItemCard = ({ item, vendor, computeRating, onEdit, onDelete }) => {
     useEffect(() => {
         if (user_type() === 'buyer') {
             axios
-                .get(`/api/buyers/details`, {
+                .get(`http://localhost:5000/api/buyers/details`, {
                     headers: {
                         authorization: localStorage.getItem('token')
                     }
@@ -40,7 +40,7 @@ const ItemCard = ({ item, vendor, computeRating, onEdit, onDelete }) => {
     // Handle favourite addition
     const handleFavouriteAdd = () => {
         axios
-            .patch(`/api/buyers/add_favourite`, {
+            .patch(`http://localhost:5000/api/buyers/add_favourite`, {
                 item_id: item._id
             }, {
                 headers: {
@@ -73,7 +73,7 @@ const ItemCard = ({ item, vendor, computeRating, onEdit, onDelete }) => {
     // Handle favourite removal
     const handleFavouriteRemove = () => {
         axios
-            .patch(`/api/buyers/remove_favourite`, {
+            .patch(`http://localhost:5000/api/buyers/remove_favourite`, {
                 item_id: item._id
             }, {
                 headers: {
@@ -137,7 +137,7 @@ const ItemCard = ({ item, vendor, computeRating, onEdit, onDelete }) => {
             <CardMedia
                 component="img"
                 height="250"
-                image={'/api/public/images/' + item.image}
+                image={'http://localhost:5000/api/public/images/' + item.image}
                 alt="food"
             />
             <CardContent>

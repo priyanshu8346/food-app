@@ -84,7 +84,7 @@ const ItemBuy = ({ item, vendor }) => {
             });
 
             // Make POST request to backend
-            axios.post("/api/orders/add", {
+            axios.post("http://localhost:5000/api/orders/add", {
                 item_id: item._id,
                 vendor_id: vendor._id,
                 quantity: quantity,

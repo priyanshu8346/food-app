@@ -28,7 +28,7 @@ const Navbar = () => {
     useEffect(() => {
         if (user_type() === 'buyer') {
             axios
-                .get('/api/buyers/details', {
+                .get('http://localhost:5000/api/buyers/details', {
                     headers: {
                         authorization: localStorage.getItem('token')
                     }
