@@ -55,9 +55,10 @@ const Navbar = () => {
             });
     }
 
+
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed">
+            <AppBar position="fixed" style={{"backgroundColor":"blue"}}>
                 <Toolbar>
                     {matches ? <FastfoodIcon style={{ fontSize: "2rem", marginRight: "1rem" }} /> : null}
                     <Typography align="left" variant="h6" component="div" sx={{ flexGrow: 1 }}>
